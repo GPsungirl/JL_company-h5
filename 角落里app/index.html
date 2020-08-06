@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>角落方舟</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+    <!-- pc -->
+    <div id="pcpage" class="pc_page">
+        <!-- 顶部协议 -->
+        <div class="header clearfloat">
+            <div class="h_left ff_regular">
+                <a href="http://pay.arkcorner.com/api/webHtml/loginPact">注册协议</a>
+                <a href="http://pay.arkcorner.com/api/html/privacyPact.html">隐私协议</a>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div class="main">
+            <div class="title_1 ff_medium">角落里</div>
+            <div class="title_2 ff_regular"><span class="child_1">角落里</span><span>不孤单</span></div>
+            <!-- 下载按钮 iox-->
+            <div id="ios_down" class="pc_download pc_firs ">
+                <div class="vert_m icon_down">
+                    <img src="imgs/icon_ios.png" alt="">
+                </div>
+                <div class="vert_m btn_txt ff_medium">
+                    <p>App Store</p>
+                    <p class="dow">下载</p>
+                </div>
+            </div>
+            <!-- 按钮下载 android -->
+            <div id="android_down" class="pc_download pc_android ">
+                <div class="vert_m icon_down">
+                    <img src="imgs/icon_android.png" alt="">
+                </div>
+                <div class="vert_m btn_txt ff_medium">
+                    <p>Android</p>
+                    <p class="dow">下载</p>
+                </div>
+            </div>
+        </div>
+        <!-- 底部备案 -->
+        <div class="footer ff_regular">
+            <p>鲁ICP备19028745号</p>
+            <p>0532-88903698 arkcorner@arkcorner.com &nbsp;&nbsp;&nbsp;&nbsp;山东省青岛市海尔路178-2号裕龙国际中心301室</p>
+        </div>
+    </div>
+    <!-- wap -->
+    <div id="wappage" class="wap_page wap">
+        <div class="title_1 ff_medium">角落里</div>
+        <div class="title_2 ff_regular"><span class="fir">角落里</span><span>不孤单</span></div>
+        
+        <div id="iosbtn" class="ios down_wrap">
+            <div class="inl icon">
+                <img src="imgs/icon_ioswap.png" alt="">
+            </div>
+            <div class="inl txt ff_regular">
+                <p class="txt1">App Store</p>
+                <p class="txt2">下载</p>
+            </div>            
+        </div>
+
+        <div id="androidbtn" class="android down_wrap">
+            <div class="inl icon" style="margin-left:-0.2rem;">
+                <img src="imgs/icon_androidwap.png" alt="">
+            </div>
+            <div class="inl txt ff_regular">
+                <p class="txt1">Android</p>
+                <p class="txt2">下载</p>
+            </div>
+        </div>
+        <!-- shouxin down_wrap http://foo.com/hello.mobileprovision-->
+        <div id="shouxin" class="" style="display: none" href="javascript:;">
+            <!-- <p>安装完成后请前往手机:</p>
+            <p>设置->通用->设备管理 </p>       
+            <p>添加信任</p>      -->
+        </div>
+
+        <div class="pact"><a href="http://pay.arkcorner.com/api/webHtml/loginPact" class="fir_pact">注册协议</a>
+            <a href="http://pay.arkcorner.com/api/html/privacyPact.html">隐私协议</a></div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/rem.js"></script>
+    <script>
+        window.onload = function () {
+
+            if (IsPC()) { // pc
+
+                // pc点击事件
+                var ios = document.getElementById('ios_down')
+                ios.addEventListener('click', function () {
+                    window.location.href = "https://cornerbucket-1253765775.cos.ap-beijing.myqcloud.com/ios/arkcorner.ipa"
+                })
+                var android = document.getElementById('android_down')
+                android.addEventListener('click', function () {
+                    window.location.href = "https://cornerbucket-1253765775.cos.ap-beijing.myqcloud.com/android/arkcorner.apk"
+                })
+            } else { // 移动
+                // 先判断是不是微信内访问
+                var isWeixin = is_weixin();//调用is_weixin函数；获取到值
+                var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+                var weixinTip = $('<div id="weixinTip"><div class="test"><p>请点击右上角,选择"在浏览器中打开"</p><img src="./imgs/safari.png"/></div></div>');
+                if (isWeixin) {
+                    $("body").append(weixinTip);
+                    $("#weixinTip").css({
+                        "position": "fixed",
+                        "left": "0",
+                        "top": "0",
+                        "height": winHeight,
+                        "width": "100%",
+                        "z-index": "1000",
+                        "background-color": "rgba(0,0,0,0.8)",
+                        "filter": "alpha(opacity=80)",
+                        "float": "left"
+                    });
+                    $("#weixinTip div p").css({
+                        "text-align": "right",
+                        "width": "85%",
+                        "margin-top": "10%",
+                        "color": "#fff",
+                        "font-size": "0.16rem"
+                    });
+                    $("#weixinTip div").css({
+                        "display": "flex",
+                        "justify-content": "space-around",
+                        "align-items": "center",
+                        "padding-left": "4%",
+                        "padding-right": "4%"
+
+                    })
+                    $("#weixinTip div img").css({
+                        "text-align": "left",
+                        "width": "0.16rem",
+                        "height": "0.16rem",
+                        "margin-top": "7%",
+                        "vertical-align":"middle",
+                        "padding-left": "4%",
+                        "padding-right": "4%"
+                    })
+                    $("#weixinTip div img").src = './imgs/safari.png'
+                }
+                
+                // wap点击事件
+                // 这里根据移动端原生的 userAgent 来判断当前是 Android 还是 ios
+                var u = navigator.userAgent;
+                // Android终端
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+                // IOS 终端
+                var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                // 安卓点击
+                var wap_android = document.getElementById('androidbtn');
+                wap_android.addEventListener('click', function () {
+                    window.location.href = 'https://cornerbucket-1253765775.cos.ap-beijing.myqcloud.com/android/arkcorner.apk'
+                })
+                // ios点击
+                var wap_ios = document.getElementById('iosbtn');
+                wap_ios.addEventListener('click', function () {
+                    
+                    window.location.href = 'https://apps.apple.com/us/app/%E8%A7%92%E8%90%BD%E9%87%8C/id1472509332?l=zh&ls=1'
+                    // 5秒后显示授权信任itms-services://?action=download-manifest&;url=https://www.arkcorner.com/js/xycp.plist
+                    // setTimeout(function(){
+                        
+                    // },5000)
+                    
+                })
+
+                if (isAndroid) {
+                    //document.getElementById("iosbtn").style.display = 'none'
+                    var wap_android = document.getElementById('androidbtn');
+                    wap_android.addEventListener('click', function () {
+                        window.location.href = 'https://cornerbucket-1253765775.cos.ap-beijing.myqcloud.com/android/arkcorner.apk'
+                    })
+                } else {
+                    document.getElementById('shouxin').style.display = 'block'
+                    //document.getElementById("androidbtn").style.display = 'none'
+                    var wap_ios = document.getElementById('iosbtn');
+                    wap_ios.addEventListener('click', function () {
+                        window.location.href = 'https://apps.apple.com/us/app/%E8%A7%92%E8%90%BD%E9%87%8C/id1472509332?l=zh&ls=1'
+                        // 5秒后显示授权信任itms-services://?action=download-manifest&;url=https://www.arkcorner.com/js/xycp.plist
+                        // setTimeout(function(){
+                            
+                        // },5000)
+                        
+                    })
+                }
+
+            }
+        }
+
+        // 判断pc还是移动
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        // 这个实现是否是在微信打开的，如果是返回true，如果不是，返回false
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

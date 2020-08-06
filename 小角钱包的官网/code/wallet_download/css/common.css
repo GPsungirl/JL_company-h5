@@ -1,0 +1,382 @@
+@font-face {
+    font-family: 'PingFangSCExtralight';
+    src: url('../fonts/PingFangExtraLight_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PingFangSCMedium';
+    src: url('../fonts/PingFangMedium_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FS';
+    src: url('../fonts/AdobeFangsongStd-Regular_0.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.common_color{
+    color:#F0BE83;
+}
+.ff_medium {
+    font-family: 'PingFangSCMedium';
+}
+
+.ff_FS {
+    font-family: 'FS';
+}
+
+.ff_Extralight {
+    font-family: 'PingFangSCExtralight';
+}
+
+.ff_regular {
+    font-family: 'PingFangRegular'
+}
+
+.ff_medium {
+    font-family: 'PingFangMedium'
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* pc */
+@media screen and (min-width:768px) {
+    .wap_page {
+        display: none;
+    }
+
+    .logo_wrap img {
+        width: 78px;
+    }
+
+    .pc_page {
+        display: block;
+    }
+
+    html,
+    body {
+
+
+        margin: 0;
+        padding: 0;
+        background: url('../imgs/logo_pc.png') no-repeat center center;
+        
+        background-attachment: fixed;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/logo_pc.png', sizingMethod='scale');
+        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/logo_pc.png', sizingMethod='scale');
+        background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        /* 去除背景图 */
+        height: 100%;
+        background-color: #000;
+    }
+
+
+
+    .vert_m {
+        vertical-align: middle;
+    }
+
+    .h_left {
+        padding-top: 46px;
+        float: right;
+    }
+
+    .f_l {
+        float: left;
+    }
+
+    .f_r {
+        float: right;
+    }
+
+    .h_left a {
+        letter-spacing: 1px;
+        margin-right: 67px;
+        font-size: 18px;
+        color: #D1D1D1 !important;
+        font-family: 'PingFangSC-Regular';
+    }
+
+    .clearfloat:after {
+        display: block;
+        clear: both;
+        content: "";
+        visibility: hidden;
+        height: 0
+    }
+
+    .clearfloat {
+        zoom: 1
+    }
+
+    .main {
+        color: #fff;
+        text-align: center;
+        /* margin-top: 8%; */
+    }
+
+    .title_1 {
+        letter-spacing: 1px;
+        font-size: 30px;
+        margin-bottom: 10px
+    }
+
+    .title_2 {
+        letter-spacing: 1px;
+        font-size: 20px;
+    }
+
+    .child_1 {
+        margin-right: 24px;
+    }
+
+    .pc_download {
+        width: 265px;  
+        padding:6px 0;      
+        border: 1px solid #F0BE83;
+        margin: auto;
+        border-radius: 18px;        
+        box-sizing: border-box;
+    }
+
+    .pc_download:hover {
+        cursor: pointer;
+    }
+    .pc_download .btn_txt{
+        width:136px;
+        margin-left:12px;
+    }
+    .pc_download .icon_down {
+        /* margin-right: 20px; */
+    }
+
+    .dow {
+        text-align: left;
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .pc_download .icon_down img {
+        width: 50px;
+    }
+
+    .pc_download>div {
+        display: inline-block;
+    }
+
+    .pc_download .btn_txt {
+        font-size: 27px;
+    }
+
+    .pc_firs {
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+    .pc_android {
+        border-color: #F0BE83;
+        
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 5px;
+        width: 100%;
+    }
+
+    .footer p {
+        line-height: 26px;
+        text-align: center;
+        color: #D1D1D1;
+    }
+    .fir{
+        font-size: 14px;
+    }
+}
+
+/* wap */
+@media screen and (max-width:768px) {
+
+    /* 隐藏pc */
+    .pc_page {
+        display: none;
+    }
+
+    .wap_page {
+        display: block;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: url('../imgs/bg_wat.png') no-repeat;
+        background-attachment: fixed;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/bg_wat.png', sizingMethod='scale');
+        -ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../imgs/bg_wat.png', sizingMethod='scale');
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+
+        /* 去除背景图 */
+        background-color: #000;
+    }
+
+    .wap {
+        height: 100%;
+        text-align: center;
+        color: #fff;
+
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .wap .title_1 {
+        font-size: 0.285rem;
+        color: #F0BE83;
+    }
+
+    .wap>div {
+        margin-bottom: 0.1rem;
+    }
+
+    .wap .title_2 {
+        font-size: 0.15rem;
+    }
+
+    .wap .title_2 .fir {
+
+        font-size: 0.14rem;
+        color: #F0BE83;
+        letter-spacing: 0.04rem;
+    }
+
+    .down_wrap {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .txt .txt1 {
+        font-size: 0.19rem;
+    }
+
+    .txt .txt2 {
+        font-size: 0.13rem;
+        text-align: left;
+
+
+    }
+
+    .wap .down_wrap {
+        width: 2.06rem;
+        height: 0.59rem;
+        border-radius: 0.09rem;
+        border: 0.01rem solid #fff;
+    }
+
+    .wap .shouxin {
+        width: 1.06rem;
+        height: 0.29rem;
+        line-height: 0.29rem;
+        border-radius: 0.09rem;
+        border: 0.01rem solid #fff;
+        color: #fff;
+        margin-top: 0.1rem;
+        font-size: 0.14rem;
+    }
+
+    #shouxin {
+        width: 2.06rem;
+        font-size: 0.15rem;
+        line-height: 0.29rem;
+    }
+
+    #shouxin p {
+        /* text-align: left;
+        padding:0 0.08rem; */
+    }
+
+    .down_wrap {
+        border-color: #F0BE83 !important;
+        margin-top: 0.2rem;
+    }
+
+    .inl {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .inl.icon {
+        margin-right: 0.2rem;
+    }
+
+    .icon img {
+        width: 0.34rem;
+    }
+
+    .pact {
+        text-align: center;
+    }
+
+    .fir_pact {
+        margin-right: 0.15rem;
+    }
+
+    .pact a {
+        letter-spacing: 0.01rem;
+
+        font-size: 0.125rem;
+        color: #D1D1D1 !important;
+        font-family: 'PingFangSC-Regular';
+    }
+
+    .download_wrap {
+        padding-top: 0.4rem;
+    }
+
+    .down_wrap {}
+
+    .pact {
+        padding-top: 10%;
+    }
+
+    /* common */
+    .logo_wrap {
+        text-align: center;
+    }
+
+    .logo_wrap img {
+        width: 0.79rem;
+    }
+
+}
